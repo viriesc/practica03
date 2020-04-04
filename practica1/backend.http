@@ -1,0 +1,61 @@
+
+
+GET https://users-dasw.herokuapp.com/api/tokenDASW
+x-expediente: 732757
+
+### 
+POST https://users-dasw.herokuapp.com/api/users
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzMyNzU3IiwiaWF0IjoxNTg1NTU2MjU5fQ.kV2bU9Rrmt8ci3C1776zgdlBL1FJ6pa5syxpdmYw6IU
+Content-Type: application/json
+
+{
+    "nombre":"Viridiana",
+    "apellido":"Escarzaga",
+    "correo":"viri@iteso.mx",
+    "url":"https://www.google.com/url?sa=i&url=https%3A%2F%2Feldeforma.com%2F2020%2F04%2F03%2Fhugo-lopez-gatell-funcionarios-guapos-secretaria-de-salud%2F&psig=AOvVaw15fqLeafSXwFt31QdHHMZq&ust=1586069992826000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCi86eZzugCFQAAAAAdAAAAABAD",
+    "sexo":"M",
+    "fecha":"2019-10-10",
+    "password":"12345"
+}
+
+
+### BUSCAR USUARIO (otra forma) - obtiene informacion especifca de un usuario (informacion completa)
+GET https://users-dasw.herokuapp.com/api/users/
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzMyNzU3IiwiaWF0IjoxNTg1NTU2MjU5fQ.kV2bU9Rrmt8ci3C1776zgdlBL1FJ6pa5syxpdmYw6IU
+x-user-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzMyNzU3IiwiaWF0IjoxNTg1NTU2MjU5fQ.kV2bU9Rrmt8ci3C1776zgdlBL1FJ6pa5syxpdmYw6IU
+
+#regresa JSON del usuario
+
+### ACTUALIZAR USUARIO (una vez dado de alta por medio dle correo)
+### De lograrlo marca OK
+PUT https://users-dasw.herokuapp.com/api/users/viri@iteso.com
+Content-Type: application/json; charset=utf-8
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzMyNzU3IiwiaWF0IjoxNTg1NTU2MjU5fQ.kV2bU9Rrmt8ci3C1776zgdlBL1FJ6pa5syxpdmYw6IU
+x-user-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzMyNzU3IiwiaWF0IjoxNTg1NTU2MjU5fQ.kV2bU9Rrmt8ci3C1776zgdlBL1FJ6pa5syxpdmYw6IU
+
+{
+   "nombre":"Viri",
+    "apellido":"escarzaga",
+    "correo":"viri@iteso.com",
+    "url":"https://randomuser.me/api/portraits/women/21.jpg",
+    "sexo":"M",
+    "fecha":"2020-02-10",
+    "password":"12345"
+}
+
+###ELIMINAR USUARIO
+DELETE  https://users-dasw.herokuapp.com/api/users/b@b.b
+Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA3NTcxIiwiaWF0IjoxNTczNDkzNTMyfQ.MdlxEKYd4CRHHx7NR13-EQVIVJgO29fnKlpsM0Wr9dc
+x-user-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzA3NTcxIiwiaWF0IjoxNTczNDkzNTMyfQ.MdlxEKYd4CRHHx7NR13-EQVIVJgO29fnKlpsM0Wr9dc
+
+### LOGIN USUARIO
+POST  https://users-dasw.herokuapp.com/api/login
+Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzMyNzU3IiwiaWF0IjoxNTg1NTU2MjU5fQ.kV2bU9Rrmt8ci3C1776zgdlBL1FJ6pa5syxpdmYw6IU
+#regresa token
+
+{
+    "correo":"adios@t.com",
+    "password":"123456"
+}
